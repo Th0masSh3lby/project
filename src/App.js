@@ -7,10 +7,10 @@ import Details from "./pages/Details";
 
 function App() {
   return (
-    <BrowserRouter basename={"/"}>
+    <BrowserRouter>
       <Routes>
-        <Route path={`/`} element={<Home />} />
-        <Route path={`/:id`} element={<Details />} />
+        <Route path={`/project`} element={<Home />} />
+        <Route path={`/project/:id`} element={<Details />} />
       </Routes>
     </BrowserRouter>
   );

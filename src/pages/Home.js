@@ -43,7 +43,7 @@ const Home = () => {
       },
 
       render: (data) => (
-        <Link to={"/" + data?.id} style={{ textDecoration: "none" }}>
+        <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-center text-black">{data.date}</div>
         </Link>
       ),
@@ -53,7 +53,7 @@ const Home = () => {
       key: "invoice_no",
 
       render: (data) => (
-        <Link to={"/" + data?.id} style={{ textDecoration: "none" }}>
+        <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-center text-black">{data.invoice_no}</div>
         </Link>
       ),
@@ -62,7 +62,7 @@ const Home = () => {
       title: "Payer",
       key: "payer",
       render: (data) => (
-        <Link to={"/" + data?.id} style={{ textDecoration: "none" }}>
+        <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-black">
             <img
               src={`https://flagicons.lipis.dev/flags/4x3/${data.payer.src}`}
@@ -79,7 +79,7 @@ const Home = () => {
       title: "Payee",
       key: "payee",
       render: (data) => (
-        <Link to={"/" + data?.id} style={{ textDecoration: "none" }}>
+        <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-black">
             <img
               src={`https://flagicons.lipis.dev/flags/4x3/${data.payee.src}`}
@@ -100,7 +100,7 @@ const Home = () => {
         multiple: 1,
       },
       render: (data) => (
-        <Link to={"/" + data?.id} style={{ textDecoration: "none" }}>
+        <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-center text-black">{data.amount}₹</div>
         </Link>
       ),
@@ -113,7 +113,7 @@ const Home = () => {
         multiple: 1,
       },
       render: (data) => (
-        <Link to={"/" + data?.id} style={{ textDecoration: "none" }}>
+        <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-center text-black">
             {Math.round((Number(data.amount) * 100) / Number(dataConv?.INR)) /
               100}
@@ -131,7 +131,7 @@ const Home = () => {
         multiple: 1,
       },
       render: (data) => (
-        <Link to={"/" + data?.id} style={{ textDecoration: "none" }}>
+        <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           {data.status === "1" ? (
             <div className="d-flex flex-row gap-2">
               <div className="col">

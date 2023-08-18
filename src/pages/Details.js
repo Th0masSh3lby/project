@@ -4,6 +4,7 @@ import EditForm from "../helper/Edit";
 import { useState } from "react";
 import { Drawer } from "antd";
 import { Link } from "react-router-dom";
+import { AiOutlineEdit, AiOutlineHome } from "react-icons/ai";
 
 const Details = () => {
   const data = useSelector((state) => state.data);
@@ -37,12 +38,12 @@ const Details = () => {
       <div className="border bordered">
         <div className="d-flex flex-row  py-3 align-items-center">
           <div>Invoice No: {currentData[0].invoice_no}</div>
-          <div className="btn btn-primary mx-5" onClick={showEditDrawer}>
-            Edit Details
+          <div className="btn btn-primary mx-3" onClick={showEditDrawer}>
+            <AiOutlineEdit size={20} />
           </div>
-          <Link to="/">
+          <Link to="/project">
             <div className="btn btn-primary " onClick={showEditDrawer}>
-              Home
+              <AiOutlineHome size={20} />
             </div>
           </Link>
         </div>
