@@ -38,7 +38,8 @@ const Home = () => {
       title: "Transaction Date",
       key: "date",
       sorter: {
-        compare: (a, b) => Number(a.date[0]) - Number(b.date[0]),
+        compare: (a, b) =>
+          Number(a.date.slice(0, 2)) - Number(b.date.slice(0, 2)),
         multiple: 1,
       },
 
@@ -51,6 +52,10 @@ const Home = () => {
     {
       title: "Invoice No.",
       key: "invoice_no",
+      sorter: {
+        compare: (a, b) => a.invoice_no.localeCompare(b.invoice_no),
+        multiple: 1,
+      },
 
       render: (data) => (
         <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
@@ -61,6 +66,10 @@ const Home = () => {
     {
       title: "Payer",
       key: "payer",
+      sorter: {
+        compare: (a, b) => a.payer.name.localeCompare(b.payer.name),
+        multiple: 1,
+      },
       render: (data) => (
         <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-black">
@@ -78,6 +87,10 @@ const Home = () => {
     {
       title: "Payee",
       key: "payee",
+      sorter: {
+        compare: (a, b) => a.payee.name.localeCompare(b.payee.name),
+        multiple: 1,
+      },
       render: (data) => (
         <Link to={"/project/" + data?.id} style={{ textDecoration: "none" }}>
           <div className="d-flex text-black">
